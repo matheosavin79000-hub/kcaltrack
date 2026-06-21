@@ -557,6 +557,10 @@ function baseOpts(theme){
 }
 
 function renderCharts(){
+  if(typeof Chart==='undefined'){
+    console.error('Chart.js non chargé — graphiques indisponibles (vérifiez la connexion réseau).');
+    return;
+  }
   destroyCharts();
   const theme=chartTheme();
 
@@ -768,6 +772,10 @@ function showDayDetail(iso){
    RENDER — SINCE START
    ========================================================= */
 function renderSinceStart(){
+  if(typeof Chart==='undefined'){
+    console.error('Chart.js non chargé — graphique "depuis le début" indisponible.');
+    return;
+  }
   const p=DB.profile;
   const w=buildWeightSeries();
   const bf=buildSeries('bodyfat');
