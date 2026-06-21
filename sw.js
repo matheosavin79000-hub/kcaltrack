@@ -1,5 +1,8 @@
-const CACHE = 'metabolyse-v3';
-const ASSETS = ['./', './index.html', './style.css', './app.js', './manifest.json'];
+const CACHE = 'metabolyse-v4';
+const ASSETS = [
+  './', './index.html', './style.css', './app.js', './manifest.json', './icon.svg',
+  'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js'
+];
 
 self.addEventListener('install', e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));
